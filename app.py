@@ -1,4 +1,3 @@
-# app.py — веб-интерфейс для Chukchi IR
 from flask import Flask, render_template, request, redirect, url_for
 from pipeline import load_corpus, build_indices, search, tokenize
 from spellchecker import SpellChecker, build_vocab
@@ -7,7 +6,6 @@ import time
 
 app = Flask(__name__)
 
-# ── Глобальная инициализация при запуске ─────────────────────
 print("Загружаем корпус...")
 doc_texts_ckt, doc_texts_ru = load_corpus()
 doc_tokens = [tokenize(text) for text in doc_texts_ckt]
@@ -21,13 +19,11 @@ tfidf, matrix = build_news_index(news)
 print("Готово!")
 
 
-# ── Главная страница ─────────────────────────────────────────
 @app.route("/")
 def index():
     return render_template("index.html")
 
 
-# ── Страница поиска ──────────────────────────────────────────
 @app.route("/search", methods=["GET", "POST"])
 def search_page():
     if request.method == "POST":
@@ -52,7 +48,6 @@ def search_page():
     return render_template("search.html")
 
 
-# ── Страница результатов ─────────────────────────────────────
 @app.route("/results")
 def results_page():
     query = request.args.get("query", "").strip()
