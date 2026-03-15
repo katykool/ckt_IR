@@ -106,16 +106,16 @@ def build_ri(doc_tokens, dim=1000, nonzero=6):
 def build_indices(doc_texts_ckt):
     doc_tokens = [tokenize(text) for text in doc_texts_ckt]
 
-    print("BM25...")
+    # print("BM25...")
     bm25 = build_bm25(doc_tokens)
 
-    print("Word2Vec...")
+    # print("Word2Vec...")
     w2v_model, doc_vectors_w2v = build_w2v(doc_tokens)
 
-    print("FastText...")
+    # print("FastText...")
     ft_model, doc_vectors_ft = build_fasttext(doc_tokens)
 
-    print("Random Indexing...")
+    # print("Random Indexing...")
     ri_word_vectors, doc_vectors_ri, ri_dim = build_ri(doc_tokens)
 
     return {

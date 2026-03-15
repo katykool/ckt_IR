@@ -73,9 +73,9 @@ def main():
     # поиск
     if args.mode in ("search", "all"):
         indices = build_indices(doc_texts_ckt)
-        print(f"{'='*50}")
+        print(f"{'*'*50}")
         print(f"ПОИСК  |  запрос: {query}  |  индекс: {args.index}")
-        print(f"{'='*50}\n")
+        print(f"{'*'*50}\n")
         results = search(
             query=query,
             index=args.index,

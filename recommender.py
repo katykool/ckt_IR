@@ -25,7 +25,7 @@ def build_news_index(news):
     news_ckt_texts = [n["ckt_text"] for n in news]
     tfidf = TfidfVectorizer(tokenizer=tokenize, token_pattern=None)
     matrix = tfidf.fit_transform(news_ckt_texts)
-    print(f"TF-IDF матрица новостей: {matrix.shape}")
+    # print(f"TF-IDF матрица новостей: {matrix.shape}")
     return tfidf, matrix
 
 def recommend(query, news, tfidf, matrix, top_k=3):
