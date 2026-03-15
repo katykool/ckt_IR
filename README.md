@@ -1,4 +1,4 @@
-# ckt_IR
+# Chukchi Information Retrieval
 
 ## Корпус
  
