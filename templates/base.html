@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Chukchi IR{% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700&family=Spectral:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:    #1a1410;
+      --paper:  #f5f0e8;
+      --cream:  #ede6d6;
+      --rust:   #b84a2e;
+      --ochre:  #c8943a;
+      --tundra: #4a6741;
+      --muted:  #8a7e6e;
+      --border: #c8b89a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Spectral', serif;
+      background: var(--paper);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    header {
+      border-bottom: 2px solid var(--ink);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--paper);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .05em;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .logo span { color: var(--rust); }
+
+    nav a {
+      font-family: 'Unbounded', sans-serif;
+      font-size: .7rem;
+      font-weight: 400;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--muted);
+      margin-left: 2rem;
+      transition: color .2s;
+    }
+
+    nav a:hover { color: var(--rust); }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Unbounded', sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: .75rem 2rem;
+      border: 2px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+
+    .btn:hover {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .btn-ghost:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .btn-rust {
+      border-color: var(--rust);
+      background: var(--rust);
+      color: var(--paper);
+    }
+
+    .btn-rust:hover {
+      background: var(--paper);
+      color: var(--rust);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: .8rem;
+      color: var(--muted);
+      font-family: 'Unbounded', sans-serif;
+      letter-spacing: .05em;
+    }
+  </style>
+  {% block extra_style %}{% endblock %}
+</head>
+<body>
+  <header>
+    <a class="logo" href="/">Chukchi<span>IR</span></a>
+    <nav>
+      <a href="/">Главная</a>
+      <a href="/search">Поиск</a>
+      <a href="https://github.com/katykool/ckt_IR/tree/main" target="_blank">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>Катя Шерстнева © 2026</footer>
+</body>
+</html>
