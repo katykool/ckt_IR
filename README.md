@@ -100,16 +100,16 @@ python main.py "ӄораӈы"
  
 ```bash
 # поиск + рекомендации (по умолчанию)
-python main.py "ӄораӈы"
+python main.py "ӄораны"
  
 # только поиск
-python main.py "ӄораӈы" --mode search
+python main.py "ӄораны" --mode search
  
 # только поиск с выбором индекса
-python main.py "ӄораӈы" --mode search --index ri
+python main.py "ӄораны" --mode search --index ri
  
 # только рекомендации
-python main.py "ӄораӈы" --mode recommend
+python main.py "ӄораны" --mode recommend
  
 # всё вместе со спеллчекером
 python main.py "ӄораӈы" --mode all --spellcheck --index bm25
