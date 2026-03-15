@@ -112,7 +112,7 @@ python main.py "ӄораӈы" --mode search --index ri
 python main.py "ӄораӈы" --mode recommend
  
 # всё вместе со спеллчекером
-python main.py "ӄораны" --mode all --spellcheck --index bm25
+python main.py "ӄорамы" --mode all --spellcheck --index bm25
 ```
 
 ### Программный интерфейс
